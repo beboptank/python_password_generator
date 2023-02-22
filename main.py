@@ -24,22 +24,29 @@ total_chars = num_of_letters + num_of_symbols + num_of_numbers
 password = ""
 
 for i in range(0, total_chars):
-    current_type = random.randint(0, 3)
+    current_type = random.randint(0, 2)
+    print(i, current_type)
 
     if current_type == 0 and (letters_counter < num_of_letters):
         char_to_add = letters[random.randint(0, len(letters) - 1)]
         password = password + char_to_add
         letters_counter += 1
+    else:
+        current_type = 1
 
     if current_type == 1 and (symbols_counter < num_of_symbols):
         char_to_add = symbols[random.randint(0, len(symbols) - 1)]
         password = password + char_to_add
         symbols_counter += 1
+    else:
+        current_type = 2
 
     if current_type == 2 and (number_counter < num_of_numbers):
         char_to_add = numbers[random.randint(0, len(numbers) - 1)]
         password = password + char_to_add
         number_counter += 1
+    else:
+        current_type = 0
 
 print(password)
 print(letters_counter)
