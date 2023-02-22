@@ -27,6 +27,7 @@ for i in range(0, total_chars):
     current_type = random.randint(0, 2)
     print(i, current_type)
 
+    # this area needs work - works for same amounts of chars (i.e. 3 letters, 3 symbols, 3 numbers) but not varying values
     if current_type == 0 and (letters_counter < num_of_letters):
         char_to_add = letters[random.randint(0, len(letters) - 1)]
         password = password + char_to_add
