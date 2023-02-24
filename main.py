@@ -19,13 +19,14 @@ letters_id = 0
 symbols_id = 1
 numbers_id = 2
 
+choice_values = [0, 1, 2]
+
 total_chars = num_of_letters + num_of_symbols + num_of_numbers
 
 password = ""
 
 for i in range(0, total_chars):
-    current_type = random.randint(0, 2)
-    print(i, current_type)
+    current_type = random.choice(choice_values)
 
     # this area needs work - works for same amounts of chars (i.e. 3 letters, 3 symbols, 3 numbers) but not varying values
     if current_type == 0 and (letters_counter < num_of_letters):
